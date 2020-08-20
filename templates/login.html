@@ -1,0 +1,25 @@
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="../static/login.css">
+{% endblock %}
+
+{% block content %}
+    <body>
+        <div class="loginbox">
+            <img src="../static/logo.png" class="logo">
+            <h1 class="logintext">Bur Oak DECA</h1>
+            
+            <form method="POST" action="/">
+                <p>Username</p>
+                <input type="text" name="username" placeholder="Enter Username">
+                <p>Password</p>
+                <input type="password" name="password" placeholder="Enter Password">
+                <input type="submit" name="" value="Login">
+            </form>
+        </div>      
+    </body>
+{% endblock %}

@@ -1,0 +1,25 @@
+.mynav a {
+    margin-left: 30px;
+    margin-right: 10px;
+}
+
+.mynav a:hover {
+    border-bottom: 2px solid #f7ca14;
+}
+
+.mynav a.dropdown-item {
+    border-bottom: none;
+    color: rgba(0,0,0,0.5);
+}
+
+.mynav a.dropdown-item:hover {
+    color: black;
+    background: none;
+}
+.active a.dropdown-item {
+    background: none;
+}
+
+.active a {
+    border-bottom: 2px solid #f7ca14;
+}

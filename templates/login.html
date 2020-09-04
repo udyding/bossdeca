@@ -1,14 +1,23 @@
-
-{% block title %}
-Login
-{% endblock %}
-
-{% block styles %}
-<link rel="stylesheet" href="../static/login.css">
-{% endblock %}
-
-{% block content %}
+<!-- THIS PAGE DOESN'T INHERIT BASE.HTML AS IT IS A SEPARATE PAGE -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../static/login.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+        crossorigin="anonymous">
+        <title>Login</title>
+    </head>
+    
     <body>
+        {% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary border text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ")}}
+                </div>
+            </header>
+        {% endif %}
+
         <div class="loginbox">
             <img src="../static/logo.png" class="logo">
             <h1 class="logintext">Bur Oak DECA</h1>
@@ -22,4 +31,9 @@ Login
             </form>
         </div>      
     </body>
-{% endblock %}
+</html>
+
+
+
+
+    

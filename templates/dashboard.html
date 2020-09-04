@@ -5,10 +5,15 @@ Dashboard
 {% endblock %}
 
 {% block styles %}
-{{super()}}
 <link rel="stylesheet" href="../static/style.css">
 {% endblock %}
 
 {% block content %}
-<h1>{{g.user.username}}'s Profile with id number {{g.user.id}}</h1>
+<div class="container-fluid">
+    <div class="greeting">
+        <h1 class="hello">{{ user_info.first_name }} {{ user_info.last_name }}</h1>
+        <h3 class="role">{{ user_info.role }}</h3>
+        
+    </div>
+</div>
 {% endblock %}

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
         crossorigin="anonymous">
 
@@ -37,8 +39,30 @@
                     </div>
                   </li>
                 </ul>
+                <ul class="nav navbar-nav ml-auto">
+                  <li class="nav-item dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">My Profile</a>
+                      <div class="dropdown-menu dropdown-menu-right">
+                          <a href="/changepassword" class="dropdown-item">Change Password</a>
+                          <div class="dropdown-divider"></div>
+                          <a href="/logout"class="dropdown-item">Logout</a>
+                      </div>
+                  </li>
+              </ul>
               </div>
         </nav>
+        
+        
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class=flashes>
+           {% for message in messages %}
+             <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+         {% endif %}
+        {% endwith %}
+
         {% block content %}
         {% endblock %}
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
